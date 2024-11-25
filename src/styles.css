@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+/* Color styles */
+--primary-color: #FF9500;
+--background-color: #FFFDEE;
+--fade-color: #FFC472;
+--background--secondary: #FFECD2;
+}
