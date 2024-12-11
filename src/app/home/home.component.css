@@ -31,14 +31,6 @@ main{
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-main>div{
-  background-color: brown;
-  height: 10rem;
-  box-sizing: border-box;
-  border: 2px solid black;
-  border-radius: 1rem;
-  padding: 1rem;
-}
 .mainButton{
   display: block;
   background-color: var(--primary-color);
@@ -59,5 +51,8 @@ main>div{
   height: 2rem;
   width: 2rem;
 }
-
-
+@media  (min-width: 568px){
+  main{
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

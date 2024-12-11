@@ -4,12 +4,7 @@
     <input id="SearchInput" type="text" placeholder="Buscar receta">
   </div>
   <main>
-   <app-home-cards [title]="Recipes[0].title" [imgSrc]="Recipes[0].image"></app-home-cards>
-   <app-home-cards [title]="Recipes[1].title" [imgSrc]="Recipes[1].image"></app-home-cards>
-   <app-home-cards [title]="Recipes[2].title" [imgSrc]="Recipes[2].image"></app-home-cards>
-   <app-home-cards></app-home-cards>
-   <app-home-cards></app-home-cards>
-   <app-home-cards></app-home-cards>
+   <app-home-cards *ngFor="let recipe of Recipes" [title]="recipe.title" [imgSrc]="recipe.image"></app-home-cards>
   </main>
   <button class="mainButton"><img src="../../assets/recipeBook.png" alt=""> Preparar receta</button>
   <button class="mainButton"><img src="../../assets/cart.png" alt="">Lista de la compra</button>
