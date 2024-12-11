@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
   declarations: [
     AppComponent,
     HomeCardsComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule
