@@ -1,13 +1,11 @@
 <main>
   <img id="logo" src="../../assets/logohivechefs.png" alt="Logo Hive Chefs">
-  <input type="text" placeholder="Usuario(email)">
-  <input type="text" placeholder="Contraseña">
+  <app-big-input-field [placeholder]="'Usuario email'" (InputDataChange)="updateMail($event)"></app-big-input-field>
+  <app-big-input-field [placeholder]="'Contraseña'" (InputDataChange)="updatePassword($event)"></app-big-input-field>
   <div>
-    <input type="checkbox"> <label for="name">Mantener la sesion iniciada</label>
+    <input type="checkbox" name="keepSession"> <label for="keepSession">Mantener la sesion iniciada</label>
   </div>
   <a href="#">He olvidado la contraseña</a>
   <a href="#">No tengo cuenta, crear una</a>
-  <button>
-    Entrar
-  </button>
+  <app-big-button [buttonText]="'Entrar'" (clickEvent)="login()"></app-big-button>
 </main>
