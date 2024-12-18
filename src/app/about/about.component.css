@@ -6,6 +6,7 @@
     margin: 0 auto;
     gap: 0.5rem;
     background-color: var(--background-color);
+    height: 100vh;
 }
 #logo{
     width: 250px; 
@@ -40,5 +41,32 @@
   .social-link i {
     font-size: 24px; /* Ajusta el tamaño del ícono interno */
   }
+
+ /* Media Queries */
+@media (max-width: 768px) {
+  #logo {
+      width: 150px; /* Más pequeño para tablets */
+  }
+  .social-link {
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #about {
+      height: auto; /* Permite que la altura sea ajustable en móviles */
+  }
+  #logo {
+      width: 200px; /* Tamaño reducido para móviles */
+  }
+  .social-link {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+  }
+
+}
 
   

@@ -8,4 +8,7 @@ body{
 --fade-color: #FFC472;
 --background--secondary: #FFECD2;
 }
+html{
+    height: 100vh;
+}
 
