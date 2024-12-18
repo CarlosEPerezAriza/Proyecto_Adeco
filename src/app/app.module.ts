@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { CuentasPesonalizacionComponent } from './cuentas-pesonalizacion/cuentas-pesonalizacion.component';
+import { PopupModificarDatosComponent } from './popup-modificar-datos/popup-modificar-datos.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { CuentasPesonalizacionComponent } from './cuentas-pesonalizacion/cuentas
     AboutComponent,
     FooterComponent,
     CuentasPesonalizacionComponent,
+    PopupModificarDatosComponent,
   ],
   imports: [
     BrowserModule,
