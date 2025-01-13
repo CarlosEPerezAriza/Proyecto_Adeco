@@ -1,0 +1,14 @@
+<div>
+  <h2>HiveChefVisitor</h2>
+  <img src="https://www.strasys.uk/wp-content/uploads/2022/02/Depositphotos_484354208_S.jpg" alt="" />
+  <app-big-button [buttonText]="'Cambiar Imagen perfil'" (clickEvent)="selectData(imageSelector)"></app-big-button>
+  <app-big-button [buttonText]="'Cambiar nombre usuario'" (clickEvent)="selectData(usernameSelector)"></app-big-button>
+  <app-big-button [buttonText]="'Cambiar contraseña'" (clickEvent)="selectData(passwordSelector)"></app-big-button>
+  <app-big-button [buttonText]="'Gestionar recetas'"></app-big-button>
+  <app-big-button [buttonText]="'Planificar comidas'"></app-big-button>
+  <app-big-button [buttonText]="'Cerrar sesion'"></app-big-button>
+<app-popup-modificar-datos [popupTitle]="popupTitle" *ngIf="popupVisible" (sendNewData)="updateData($event)"></app-popup-modificar-datos>
+<!-- Visualizar datos de perfil (depuracion)-->
+<p>{{username}}</p>
+<p>{{image}}</p>
+<p>{{password}}</p>
