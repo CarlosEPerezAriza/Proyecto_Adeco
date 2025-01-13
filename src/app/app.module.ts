@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BigInputFieldComponent } from './big-input-field/big-input-field.component';
@@ -12,7 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { CuentasPesonalizacionComponent } from './cuentas-pesonalizacion/cuentas-pesonalizacion.component';
 import { PopupModificarDatosComponent } from './popup-modificar-datos/popup-modificar-datos.component';
-import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [

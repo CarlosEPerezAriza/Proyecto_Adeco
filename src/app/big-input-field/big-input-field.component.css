@@ -6,3 +6,9 @@ input{
  border: 3px solid var(--primary-color);
  border-radius: 1rem;
 }
+:host{
+  width:  100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

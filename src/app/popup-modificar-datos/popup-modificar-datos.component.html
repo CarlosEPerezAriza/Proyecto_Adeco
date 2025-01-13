@@ -1,5 +1,5 @@
 <div>
-<h3>{{popupTitle}}</h3>
-<input type="text" [(ngModel)]="ValueToUpdate" name="" id="">
-<input type="button" value="Submit" (click)="updateField()">
+  <h3>{{popupTitle}}</h3>
+  <app-big-input-field [placeholder]="'Carrot'" (InputDataChange)="updateData($event)"></app-big-input-field>
+  <app-big-button [buttonText]="'Save'" (click)="updateField()"></app-big-button>
 </div>

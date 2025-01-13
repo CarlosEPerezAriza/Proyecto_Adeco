@@ -11,3 +11,9 @@ button{
 button:active{
     filter: brightness(0.8);
 }
+:host{
+  width:  100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

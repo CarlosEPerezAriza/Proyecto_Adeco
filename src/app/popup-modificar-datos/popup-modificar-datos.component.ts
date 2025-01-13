@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-popup-modificar-datos',
@@ -8,7 +8,14 @@ import { Component, Input } from '@angular/core';
 export class PopupModificarDatosComponent {
   @Input() popupTitle = ""
   ValueToUpdate: string = "";
-
-  updateField(){}
+  @Output() sendNewData = new EventEmitter<string>();
+  updateData(value: string)
+  {
+    this.ValueToUpdate = value;
+  }
+  updateField()
+  {
+    this.sendNewData.emit(this.ValueToUpdate)
+  }
 
 }
