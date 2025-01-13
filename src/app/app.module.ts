@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { CuentasPesonalizacionComponent } from './cuentas-pesonalizacion/cuentas-pesonalizacion.component';
 import { PopupModificarDatosComponent } from './popup-modificar-datos/popup-modificar-datos.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { PopupModificarDatosComponent } from './popup-modificar-datos/popup-modi
     FooterComponent,
     CuentasPesonalizacionComponent,
     PopupModificarDatosComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
