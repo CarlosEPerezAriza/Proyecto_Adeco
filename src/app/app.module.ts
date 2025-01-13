@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { TarjetasComponent } from './tarjetas/tarjetas.component';
 import { FormsModule } from '@angular/forms';
 import { IngredienteItemComponent } from './IngredientesItem/IngredienteItem.component';
+import { NombreComponenteComponent } from './nombre-componente/nombre-componente.component';
+import { IngredienteListComponent } from './ingrediente-list/ingrediente-list.component';
 // import { IngredientesListComponent } from './IngredienteList/IngredientesList.component';
 
 @NgModule({
@@ -12,6 +14,8 @@ import { IngredienteItemComponent } from './IngredientesItem/IngredienteItem.com
     AppComponent,
     TarjetasComponent,
    IngredienteItemComponent,
+   NombreComponenteComponent,
+   IngredienteListComponent,
    // IngredientesListComponent
   ],
   imports: [
