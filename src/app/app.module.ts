@@ -11,6 +11,8 @@ import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
 import { CuentasPesonalizacionComponent } from './cuentas-pesonalizacion/cuentas-pesonalizacion.component';
 import { PopupModificarDatosComponent } from './popup-modificar-datos/popup-modificar-datos.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HeaderFooterComponent } from './header-footer/header-footer.component';
 
 
 @NgModule({
@@ -25,10 +27,12 @@ import { PopupModificarDatosComponent } from './popup-modificar-datos/popup-modi
     FooterComponent,
     CuentasPesonalizacionComponent,
     PopupModificarDatosComponent,
+    HeaderFooterComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
