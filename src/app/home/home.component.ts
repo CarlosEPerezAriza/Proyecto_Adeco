@@ -1,18 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe';
+import { RecetasService } from '../Servicios/recetas.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {
-  Recipes: Recipe[] = [
-    new Recipe('Sopa casera', '../../assets/sopa.jpg'),
-    new Recipe('Tortilla de patatas', '../../assets/tortilla-patatas.jpg'),
-    new Recipe('Paella', '../../assets/paella.jpg'),
-    new Recipe('Bocata de jamón', '../../assets/bocata-jamon.jpg'),
-    new Recipe('Lentejas', '../../assets/lentejas.jpg'),
-    new Recipe('Cocido madrileño', '../../assets/cocido-madrileno.jpg'),
-  ];
+export class HomeComponent implements OnInit {
+  recetas: Recipe[] = [];
+  search: string = '';
+  error: string = '';
+  constructor(private _recetasService: RecetasService) { }
+  ngOnInit(): void {
+      this.recetas = this._recetasService.getRecetas();
+  }
+  searchReceta(){
+    this.error = '';
+    this.recetas = this._recetasService.searchRecetas(this.search);
+    if (this.recetas.length == 0){
+      this.error = 'No se encontraron recetas con esa busqueda';
+  }
+}
 }

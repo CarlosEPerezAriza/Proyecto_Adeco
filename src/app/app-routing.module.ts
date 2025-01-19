@@ -18,11 +18,12 @@ const routes: Routes = [
     {
       path: '',
       children: [
+        { path: '', redirectTo: '/login', pathMatch: 'full'},
         { path: 'home', component: HomeComponent },
         { path: 'about', component: AboutComponent },
         { path: 'cuentas-personalizacion', component: CuentasPesonalizacionComponent}
        ],
-      component: HeaderFooterComponent
+      component: HeaderFooterComponent,
     },
     { path: 'login', component: LoginComponent },
 ];
