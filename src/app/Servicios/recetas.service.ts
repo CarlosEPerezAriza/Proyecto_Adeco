@@ -13,11 +13,35 @@ export class RecetasService {
     new Recipe('Lentejas', '../../assets/lentejas.jpg'),
     new Recipe('Cocido madrileño', '../../assets/cocido-madrileno.jpg'),
   ];
+  recetaTemplate: Recipe = {
+    title:'Nueva Receta',
+    image:'../../../assets/placeholder.jpg',
+    description:'Descripicion receta',
+    ingredients: [],
+    instructions: [],
+  }
   constructor() {}
   getRecetas(){
     return this.Recipes;
   }
+  getRecetaTemplate(){
+    return this.recetaTemplate;
+  }
+
   searchRecetas(search: string){
     return this.Recipes.filter(x => x.title.toLowerCase().includes(search.toLowerCase()));
+  }
+  createReceta(receta: Recipe){
+    this.Recipes.push(receta)
+    this.recetaTemplate = {
+      title: 'Nueva Receta',
+      image: '../../../assets/placeholder.jpg',
+      description: 'Descripicion receta',
+      ingredients: [],
+      instructions: [],
+    };
+  }
+  updateTemplate(receta: Recipe){
+    this.recetaTemplate = receta
   }
 }

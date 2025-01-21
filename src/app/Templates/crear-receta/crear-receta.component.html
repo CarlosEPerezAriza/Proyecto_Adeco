@@ -1,0 +1,17 @@
+<div class="main">
+<app-big-input-field [placeholder]="'Nombre Receta'" [InputData]="receta.title" (InputDataChange)="receta.title=$event"></app-big-input-field>
+<img class="titleImg" [src]="receta.image" alt="">
+<app-big-button [buttonText]="'Cambiar Imagen'" (clickEvent)="changeImage()"></app-big-button>
+<textarea name="" id="" placeholder="descripcion receta"></textarea>
+<app-big-button [buttonText]="'Gestionar Ingredientes'"></app-big-button>
+<div>
+ <h1>Pasos</h1>
+ <div *ngFor="let paso of receta.instructions">
+  <img [src]="paso.image" alt="">
+  <p>{{paso.name}}</p>
+ </div>
+<app-big-button [buttonText]="'Añadir Paso'"></app-big-button>
+</div>
+<app-big-button [buttonText]="'Crear Receta'" (click)="crearReceta()"></app-big-button>
+<app-popup-modificar-datos [popupTitle]="'Cambiar Imagen'" *ngIf="cambiarImagenPopupVisible" (sendNewData)="updateImage($event)"></app-popup-modificar-datos>
+</div>

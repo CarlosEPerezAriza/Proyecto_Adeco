@@ -93,9 +93,9 @@ footer {
   /* Estilo base para el footer móvil */
   .mobile-footer {
     display: none; /* Ocultarlo por defecto */
-    position: fixed; /* Siempre visible en la parte inferior */
+    position: sticky; /* Siempre visible en la parte inferior */
     bottom: 0;
-    width: 100%;
+    width: 100vw;
     background-color: #fff; /* Fondo blanco */
     border-top: 2px solid #e0e0e0; /* Borde superior */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */

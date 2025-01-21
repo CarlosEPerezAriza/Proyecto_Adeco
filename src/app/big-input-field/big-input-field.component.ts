@@ -7,7 +7,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class BigInputFieldComponent {
   @Input() placeholder: string = ""
-  InputData : string = ""
+  @Input() InputData : string = ""
   @Output() InputDataChange = new EventEmitter<string>()
   updateParent(){
     this.InputDataChange.emit(this.InputData)

@@ -13,6 +13,7 @@ import { CuentasPesonalizacionComponent } from './cuentas-pesonalizacion/cuentas
 import { PopupModificarDatosComponent } from './popup-modificar-datos/popup-modificar-datos.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
+import { CrearRecetaComponent } from './Templates/crear-receta/crear-receta.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { HeaderFooterComponent } from './header-footer/header-footer.component';
     CuentasPesonalizacionComponent,
     PopupModificarDatosComponent,
     HeaderFooterComponent,
+    CrearRecetaComponent,
   ],
   imports: [
     BrowserModule,
