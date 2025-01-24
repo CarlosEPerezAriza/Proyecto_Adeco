@@ -1,4 +1,3 @@
-
 .main
 {
   background-color: var(--background-color);
@@ -16,5 +15,17 @@
 textarea {
   width: 100%;
   height: 4rem;
+}
+.paso {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: start;
+  border: 2px solid var(--primary-color);
+  margin: 0.5rem;
+}
+.paso img {
+  width: 3rem;
+  height: 2rem;
 }
 

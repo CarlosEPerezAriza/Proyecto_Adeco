@@ -1,0 +1,11 @@
+<div id="general">
+  <div id="SearchBar">
+  <!--  <button id="SearchButton" title="SearchButton" (click)="searchReceta()"><img src="../../assets/search.png" alt=""> </button> -->
+    <input id="SearchInput" type="text" [(ngModel)]="search"  placeholder="Buscar receta">
+  </div>
+  <main>
+   <app-home-cards *ngFor="let recipe of recetas" [title]="recipe.title" [imgSrc]="recipe.image" [routerLink]="['/crearreceta', recipe.id]"></app-home-cards>
+  </main>
+  <button class="mainButton"><img src="../../assets/recipeBook.png" alt=""> Preparar receta</button>
+  <button class="mainButton"><img src="../../assets/cart.png" alt="">Lista de la compra</button>
+</div>

@@ -1,25 +1,34 @@
+import { Recipe } from './../../models/recipe.model';
 import { RecetasService } from 'src/app/Servicios/recetas.service';
-import { Recipe } from './../../recipe';
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-receta',
   templateUrl: './crear-receta.component.html',
   styleUrls: ['./crear-receta.component.css'],
 })
-export class CrearRecetaComponent implements OnInit, OnDestroy {
-  receta!: Recipe;
+export class CrearRecetaComponent {
+  receta: Recipe = {id:'', title: 'Nueva receta', image: '../../../assets/placeholder.jpg', description:'Descripcion receta', ingredients: [], instructions: []};
   cambiarImagenPopupVisible: boolean = false;
-  constructor(private _recetasService:RecetasService) {}
-  ngOnInit(): void {
-    this.receta = this._recetasService.getRecetaTemplate()
+  editarPaso : boolean = false;
+  id: string = '';
+  pasoIndex : number = -1;
+  constructor(private _recetasService:RecetasService, private _route:ActivatedRoute, private _router:Router) {
+  this.id = this._route.snapshot.paramMap.get('id') || '';
+  if(this.id){
+    console.log(this._recetasService.getRecipeById(this.id))
+    this._recetasService.getRecipeById(this.id).subscribe(receta => this.receta = receta)
+    }
   }
-  ngOnDestroy() {
-    this._recetasService.updateTemplate(this.receta)
-  }
+
   crearReceta(){
-    this._recetasService.createReceta(this.receta);
-    this.receta = this._recetasService.getRecetaTemplate();
+    this._recetasService.addrecipe(this.receta);
+    this._router.navigate(['home']);
+  }
+  actualizarReceta(){
+    this._recetasService.updaterecipe(this.id, this.receta);
+    this._router.navigate(['home']);
   }
   changeImage(){
     this.cambiarImagenPopupVisible = true;
@@ -28,5 +37,18 @@ export class CrearRecetaComponent implements OnInit, OnDestroy {
   {
     this.cambiarImagenPopupVisible = false;
     this.receta.image = event;
+  }
+  eliminarReceta(){
+    this._recetasService.deleterecipe(this.id);
+    console.log('Returning home')
+    this._router.navigate(['home'])
+  }
+  editarpaso(index : number)
+  {
+    this.pasoIndex = index;
+    this.editarPaso = true
+  }
+  cerrarEditorPaso(){
+    this.editarPaso=false;
   }
 }

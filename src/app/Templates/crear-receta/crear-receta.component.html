@@ -1,17 +1,23 @@
+<app-big-button *ngIf="id" [buttonText]="'Eliminar Receta'" (click)="eliminarReceta()"></app-big-button>
 <div class="main">
 <app-big-input-field [placeholder]="'Nombre Receta'" [InputData]="receta.title" (InputDataChange)="receta.title=$event"></app-big-input-field>
 <img class="titleImg" [src]="receta.image" alt="">
 <app-big-button [buttonText]="'Cambiar Imagen'" (clickEvent)="changeImage()"></app-big-button>
-<textarea name="" id="" placeholder="descripcion receta"></textarea>
+<textarea name="" id="" placeholder="descripcion receta" [(ngModel)]="receta.description"></textarea>
 <app-big-button [buttonText]="'Gestionar Ingredientes'"></app-big-button>
 <div>
  <h1>Pasos</h1>
- <div *ngFor="let paso of receta.instructions">
+ <div class="paso" *ngFor="let paso of receta.instructions, index as i"  (click)="editarpaso(i)">
   <img [src]="paso.image" alt="">
   <p>{{paso.name}}</p>
  </div>
-<app-big-button [buttonText]="'Añadir Paso'"></app-big-button>
+<app-big-button *ngIf="!editarPaso"[buttonText]="'Añadir Paso'" (clickEvent)="editarpaso(-1)"></app-big-button>
+<app-creador-pasos *ngIf="editarPaso" [receta]="receta" [Index]="pasoIndex" (pasoCreado)="cerrarEditorPaso()">
+</app-creador-pasos>
 </div>
-<app-big-button [buttonText]="'Crear Receta'" (click)="crearReceta()"></app-big-button>
-<app-popup-modificar-datos [popupTitle]="'Cambiar Imagen'" *ngIf="cambiarImagenPopupVisible" (sendNewData)="updateImage($event)"></app-popup-modificar-datos>
+<app-big-button *ngIf="!id" [buttonText]="'Crear Receta'" (click)="crearReceta()"></app-big-button>
+<app-big-button *ngIf="id" [buttonText]="'Actualizar Receta'" (click)="actualizarReceta()"></app-big-button>
+<app-popup-modificar-datos [popupTitle]="'Cambiar Imagen'" *ngIf="cambiarImagenPopupVisible" (sendNewData)="updateImage($event)">
+
+</app-popup-modificar-datos>
 </div>
