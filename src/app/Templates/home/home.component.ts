@@ -1,25 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../recipe';
-import { RecetasService } from '../Servicios/recetas.service';
+import { RecetasService } from '../../Servicios/recetas.service';
+import { Recipe } from '../../models/recipe.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   recetas: Recipe[] = [];
   search: string = '';
   error: string = '';
-  constructor(private _recetasService: RecetasService) { }
-  ngOnInit(): void {
-      this.recetas = this._recetasService.getRecetas();
+  constructor(private _recetasService: RecetasService) {
+    this._recetasService.getrecipes().subscribe(recetas => {
+      console.log("Datos obtenidos desde Firestore:", recetas);
+      this.recetas = recetas;})
   }
-  searchReceta(){
+
+  /*searchReceta(){
     this.error = '';
     this.recetas = this._recetasService.searchRecetas(this.search);
     if (this.recetas.length == 0){
       this.error = 'No se encontraron recetas con esa busqueda';
   }
-}
+}*/
 }
