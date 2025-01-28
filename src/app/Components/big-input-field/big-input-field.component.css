@@ -1,0 +1,14 @@
+input{
+ width: 80%;
+ max-width: 20rem;
+ padding: 0.5rem;
+ margin: 0.5rem;
+ border: 3px solid var(--primary-color);
+ border-radius: 1rem;
+}
+:host{
+  width:  100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
