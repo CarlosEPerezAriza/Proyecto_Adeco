@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FirebaseAuthService } from 'src/app/Servicios/firebase-auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private _router: Router) {}
+  constructor(private _router: Router, private _authService: FirebaseAuthService) { }
   email: string = '';
   password: string = '';
   updateMail(email: string) {
@@ -16,8 +17,17 @@ export class LoginComponent {
   updatePassword(password: string) {
     this.password = password;
   }
+
   login() {
-    alert(this.email + this.password);
-    this._router.navigate(['home'])
+    this._authService.login(this.email, this.password)
+    .then((response) => {this._router.navigate(['home'])})
+    .catch(error => alert(error));
   }
+
+  register(){
+    this._authService.register(this.email, this.password)
+    .then((response) => {alert('Usuario Registrado correctamente')})
+    .catch(error => alert(error));
+  }
+
 }

@@ -18,6 +18,7 @@ import { CreadorPasosComponent } from './Templates/creador-pasos/creador-pasos.c
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { BigPasswordFieldComponent } from './Components/big-password-field/big-password-field.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCdy61T6YOcg10jzli8dzsPRYBbh7NfSUE",
@@ -34,6 +35,7 @@ const firebaseConfig = {
     AppComponent,
     LoginComponent,
     BigInputFieldComponent,
+    BigPasswordFieldComponent,
     BigButtonComponent,
     HomeCardsComponent,
     HomeComponent,
@@ -48,9 +50,10 @@ const firebaseConfig = {
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule,
+    AppRoutingModule, // Inicializar Firebase
+    provideFirestore(() => getFirestore()), // Inicializar Firestore
     provideFirebaseApp(() => initializeApp(firebaseConfig)), // Inicializar Firebase
-    provideFirestore(() => getFirestore()), provideFirebaseApp(() => initializeApp({"projectId":"recetashivechefs","appId":"1:924402207853:web:492b4da8aba8ef75208364","storageBucket":"recetashivechefs.firebasestorage.app","apiKey":"AIzaSyCdy61T6YOcg10jzli8dzsPRYBbh7NfSUE","authDomain":"recetashivechefs.firebaseapp.com","messagingSenderId":"924402207853"})), provideAuth(() => getAuth()), // Inicializar Firestore,
+    provideAuth(() => getAuth()) // Inicializar Auth
   ],
   providers: [],
   bootstrap: [AppComponent]
