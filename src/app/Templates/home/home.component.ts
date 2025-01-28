@@ -17,11 +17,13 @@ export class HomeComponent {
       this.recetas = recetas;})
   }
 
-  /*searchReceta(){
+  searchReceta(){
     this.error = '';
-    this.recetas = this._recetasService.searchRecetas(this.search);
-    if (this.recetas.length == 0){
-      this.error = 'No se encontraron recetas con esa busqueda';
+    this._recetasService.getrecipes().subscribe(recetas => {
+      this.recetas = recetas
+        .filter(recetas => recetas.title.toLowerCase().includes(this.search.toLowerCase()));})
+        .add(() => {if (this.recetas.length == 0){
+      this.error = 'No se encontraron recetas con esa busqueda';}})
+
   }
-}*/
 }

@@ -1,3 +1,9 @@
 div{
   padding: 8px;
+  height: 90vh;
+  display: block;
+  overflow: auto;
+  box-sizing: border-box;
+  background-color: var(--background-color);
+;
 }
