@@ -1,0 +1,11 @@
+<div>
+  <input type="text" [(ngModel)]="paso.name" placeholder="Nombre del paso">
+  <input type="text" [(ngModel)]="paso.image" placeholder="Imagen del paso(Url)">
+  <input type="text" [(ngModel)]="paso.description" placeholder="descripcion del paso">
+  <h1>{{paso.name}}</h1>
+  <img [src]="paso.image" alt="">
+  <p>{{paso.description}}</p>
+  <app-big-button *ngIf="Index == -1"[buttonText]="'Guardar Paso'" (clickEvent)="anadirPaso()"></app-big-button>
+  <app-big-button *ngIf="Index != -1" [buttonText]="'Editar Paso'" (clickEvent)="editarPaso()"></app-big-button>
+  <app-big-button *ngIf="Index != -1"[buttonText]="'Eliminar Paso'" (clickEvent)="eliminarPaso()"></app-big-button>
+</div>

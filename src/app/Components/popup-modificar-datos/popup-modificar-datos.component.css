@@ -1,0 +1,16 @@
+div {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 80%;
+  max-height: 20rem;
+  width: 80%;
+  max-width: 30rem;
+  background-color: var(--background--secondary);
+  border: 2px solid var(--primary-color);
+  transform: translate(-50%, -50%);
+  border-radius: 2rem;
+  text-align: center;
+}
