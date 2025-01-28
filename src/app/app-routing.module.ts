@@ -7,6 +7,7 @@ import { LoginComponent } from './Templates/login/login.component';
 import { CuentasPesonalizacionComponent } from './Templates/cuentas-pesonalizacion/cuentas-pesonalizacion.component';
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { CreadorPasosComponent } from './Templates/creador-pasos/creador-pasos.component';
+import { ListaCompraComponent } from './Templates/lista-compra/lista-compra.component';
 /*const routes: Routes = [
 
 
@@ -27,6 +28,7 @@ const routes: Routes = [
         { path: 'crearreceta', component: CrearRecetaComponent },
         { path: 'crearreceta/:id', component: CrearRecetaComponent},
         { path: 'crearPaso', component: CreadorPasosComponent },
+        { path: 'listacompra', component: ListaCompraComponent}
        ],
       component: HeaderFooterComponent,
     },

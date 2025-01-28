@@ -19,6 +19,7 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { BigPasswordFieldComponent } from './Components/big-password-field/big-password-field.component';
+import { ListaCompraComponent } from './Templates/lista-compra/lista-compra.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCdy61T6YOcg10jzli8dzsPRYBbh7NfSUE",
@@ -45,7 +46,8 @@ const firebaseConfig = {
     PopupModificarDatosComponent,
     HeaderFooterComponent,
     CrearRecetaComponent,
-    CreadorPasosComponent
+    CreadorPasosComponent,
+    ListaCompraComponent
   ],
   imports: [
     BrowserModule,
