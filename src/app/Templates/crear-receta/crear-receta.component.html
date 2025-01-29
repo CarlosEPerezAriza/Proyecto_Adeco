@@ -4,7 +4,27 @@
 <img class="titleImg" [src]="receta.image" alt="">
 <app-big-button [buttonText]="'Cambiar Imagen'" (clickEvent)="changeImage()"></app-big-button>
 <textarea name="" id="" placeholder="descripcion receta" [(ngModel)]="receta.description"></textarea>
-<app-big-button [buttonText]="'Gestionar Ingredientes'"></app-big-button>
+<h1>Ingredientes</h1>
+<div>
+
+  <table>
+    <tr *ngFor="let item of receta.ingredients, index as i">
+      <td><button class="removebutton" (click)="removeIngredient(i)">-</button></td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.quantity}}</td>
+      <td>{{item.measureUnit}}</td>
+    </tr>
+    <tr>
+      <td [colSpan]="4">----------------------------------------------</td>
+    </tr>
+    <tr>
+      <td><button class="addbutton" (click)="addIngredient()">+</button></td>
+      <td><input type="text" placeholder="Nombre" [(ngModel)]="nameInput"></td>
+      <td><input type="number" placeholder="Cantidad" [(ngModel)]="quantityInput"></td>
+      <td><input type="text" placeholder="Medida" [(ngModel)]="measureInput"></td>
+    </tr>
+  </table>
+</div>
 <div>
  <h1>Pasos</h1>
  <div class="paso" *ngFor="let paso of receta.instructions, index as i"  (click)="editarpaso(i)">

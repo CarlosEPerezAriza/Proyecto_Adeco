@@ -14,6 +14,9 @@ export class CrearRecetaComponent {
   editarPaso : boolean = false;
   id: string = '';
   pasoIndex : number = -1;
+  nameInput: string = '';
+  quantityInput: number = 0;
+  measureInput: string = '';
   constructor(private _recetasService:RecetasService, private _route:ActivatedRoute, private _router:Router) {
   this.id = this._route.snapshot.paramMap.get('id') || '';
   if(this.id){
@@ -50,5 +53,14 @@ export class CrearRecetaComponent {
   }
   cerrarEditorPaso(){
     this.editarPaso=false;
+  }
+  addIngredient(){
+    this.receta.ingredients.push({name: this.nameInput, quantity: this.quantityInput, measureUnit: this.measureInput});
+    this.nameInput = '';
+    this.quantityInput = 0;
+    this.measureInput = '';
+  }
+  removeIngredient(index: number){
+    this.receta.ingredients.splice(index, 1);
   }
 }

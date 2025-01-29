@@ -41,3 +41,6 @@ input[type='checkbox'] {
   width: 2rem;
   height: 2rem;
 }
+table input {
+ max-width: 6rem;
+}

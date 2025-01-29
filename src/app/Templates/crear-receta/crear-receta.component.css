@@ -16,6 +16,15 @@
   width: 5rem;
   height: 5rem;
 }
+table input[type='number']{
+width:3rem
+}
+table {
+  width: 80%;
+}
+table input {
+  max-width: 6rem;
+}
 textarea {
   width: 90%;
   height: 4rem;
