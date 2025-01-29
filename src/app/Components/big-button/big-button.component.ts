@@ -7,6 +7,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class BigButtonComponent {
   @Input() buttonText: string = 'No text received';
+  @Input() color: string = '';
+  @Input() bordercolor: string = '';
   @Output() clickEvent = new EventEmitter();
   clicked(){
     this.clickEvent.emit()

@@ -8,6 +8,7 @@ div {
   align-items: center;
   padding: 0.5rem;
   margin: auto;
+  background-color: var(--fade-color);
 }
 img {
   width: 100%;
