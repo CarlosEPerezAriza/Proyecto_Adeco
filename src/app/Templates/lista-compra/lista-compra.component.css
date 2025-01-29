@@ -21,11 +21,23 @@ table {
 .removebutton {
   background-color: red;
   color: white;
+  border: 3px solid black;
+}
+button {
+ border-radius: 10px;
+  height: 2rem;
+  width: 2rem;
 }
 .addbutton {
   background-color: green;
   color: white;
+  border: 3px solid white;
+
 }
 td {
   height: 3rem;
+}
+input[type='checkbox'] {
+  width: 2rem;
+  height: 2rem;
 }
