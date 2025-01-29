@@ -97,7 +97,7 @@ footer {
     bottom: 0;
     width: 100vw;
     height: 10vh;
-    background-color: #fff; /* Fondo blanco */
+    background-color: var(--background--secondary); /* Fondo blanco */
     border-top: 2px solid #e0e0e0; /* Borde superior */
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
@@ -108,7 +108,7 @@ footer {
     flex: 1; /* Distribución uniforme */
     text-align: center;
     padding: 10px 0;
-    color: #757575; /* Color del texto */
+    color: var(--text-secondary); /* Color del texto */
     font-family: Arial, sans-serif;
     font-size: 12px; /* Tamaño del texto */
     transition: all 0.2s ease;

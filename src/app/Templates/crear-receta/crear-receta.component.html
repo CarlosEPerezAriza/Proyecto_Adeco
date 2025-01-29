@@ -1,4 +1,4 @@
-<app-big-button *ngIf="id" [buttonText]="'Eliminar Receta'" (click)="eliminarReceta()"></app-big-button>
+<app-big-button *ngIf="id" [bordercolor]="'white'" [color]="'red'" [buttonText]="'Eliminar Receta'" (click)="eliminarReceta()"></app-big-button>
 <div class="main">
 <app-big-input-field [placeholder]="'Nombre Receta'" [InputData]="receta.title" (InputDataChange)="receta.title=$event"></app-big-input-field>
 <img class="titleImg" [src]="receta.image" alt="">
@@ -15,8 +15,8 @@
 <app-creador-pasos *ngIf="editarPaso" [receta]="receta" [Index]="pasoIndex" (pasoCreado)="cerrarEditorPaso()">
 </app-creador-pasos>
 </div>
-<app-big-button *ngIf="!id" [buttonText]="'Crear Receta'" (click)="crearReceta()"></app-big-button>
-<app-big-button *ngIf="id" [buttonText]="'Actualizar Receta'" (click)="actualizarReceta()"></app-big-button>
+<app-big-button *ngIf="!id" [buttonText]="'Crear Receta'" [bordercolor]="'darkgreen'" [color]="'green'" (click)="crearReceta()"></app-big-button>
+<app-big-button *ngIf="id" [buttonText]="'Actualizar Receta'" [bordercolor]="'darkgreen'" [color]="'green'" (click)="actualizarReceta()"></app-big-button>
 <app-popup-modificar-datos [popupTitle]="'Cambiar Imagen'" *ngIf="cambiarImagenPopupVisible" (sendNewData)="updateImage($event)">
 
 </app-popup-modificar-datos>
