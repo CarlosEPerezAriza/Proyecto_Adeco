@@ -7,7 +7,8 @@
   <app-big-button [buttonText]="'Gestionar recetas'"></app-big-button>
   <app-big-button [buttonText]="'Planificar comidas'"></app-big-button>
   <app-big-button [buttonText]="'Cerrar sesion'"(clickEvent)="logout()"></app-big-button>
-<app-popup-modificar-datos [popupTitle]="popupTitle" *ngIf="popupVisible" (sendNewData)="updateData($event)"></app-popup-modificar-datos>
+<app-popup-modificar-datos [popupTitle]="popupTitle" *ngIf="popupVisible"
+  (sendNewData)="updateData($event)"></app-popup-modificar-datos>
 <!-- Visualizar datos de perfil (depuracion)-->
 <p>{{username}}</p>
 <p>{{image}}</p>

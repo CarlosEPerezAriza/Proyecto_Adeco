@@ -1,0 +1,11 @@
+<div>
+  <ul>
+    <li *ngFor="let item of listaCompra.content, index as i">
+      <img [src]="item.image" alt=""> {{ item.name }} <input type="checkbox" [(ngModel)]="item.bought" name="" id=""><button (click)="removeItem(i)">-</button>
+    </li>
+  </ul>
+  <input type="text" placeholder="Nombre" [(ngModel)]="nameInput">
+  <input type="text" placeholder="Url Imagen" [(ngModel)]="imageInput">
+  <button (click)="addItem()">+</button>
+  <app-big-button [buttonText]="'Guardar Lista'" (clickEvent)="updateList()"></app-big-button>
+</div>
