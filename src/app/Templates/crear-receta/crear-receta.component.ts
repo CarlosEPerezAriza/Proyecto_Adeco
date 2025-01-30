@@ -42,9 +42,15 @@ export class CrearRecetaComponent {
     this.receta.image = event;
   }
   eliminarReceta(){
+    if (prompt("Escribe 'Eliminar Receta' para confirmar") === 'Eliminar Receta'){
     this._recetasService.deleterecipe(this.id);
     console.log('Returning home')
     this._router.navigate(['home'])
+    }
+    else
+    {
+      alert("Eliminacion cancelada")
+    }
   }
   editarpaso(index : number)
   {
