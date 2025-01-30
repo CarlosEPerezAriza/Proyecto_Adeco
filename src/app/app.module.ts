@@ -20,6 +20,8 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { BigPasswordFieldComponent } from './Components/big-password-field/big-password-field.component';
 import { ListaCompraComponent } from './Templates/lista-compra/lista-compra.component';
+import { VisorRecetasComponent } from './Templates/visor-recetas/visor-recetas.component';
+import { HeaderComponent } from './Components/header/header.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCdy61T6YOcg10jzli8dzsPRYBbh7NfSUE",
@@ -47,7 +49,9 @@ const firebaseConfig = {
     HeaderFooterComponent,
     CrearRecetaComponent,
     CreadorPasosComponent,
-    ListaCompraComponent
+    ListaCompraComponent,
+    VisorRecetasComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

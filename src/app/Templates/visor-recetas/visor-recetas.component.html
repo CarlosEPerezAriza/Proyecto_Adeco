@@ -1,0 +1,24 @@
+<div>
+
+  <div class="main">
+    <div class="ingredientes" *ngIf="pageIndex==-1">
+      <h1>{{receta?.title}}</h1>
+      <img src="{{receta?.image}}" alt="">
+      <h2>Ingredientes</h2>
+      <ul>
+        <li *ngFor="let ing of receta?.ingredients">{{ing?.quantity}} {{ing?.measureUnit}} de {{ing?.name}}</li>
+      </ul>
+    </div>
+    <div class="paso" *ngIf="pageIndex>=0 && receta">
+      <h1>{{receta!.instructions[pageIndex].name}}</h1>
+      <img src="{{receta!.instructions[pageIndex].image}}" alt="">
+      <p>{{receta!.instructions[pageIndex].description}}</p>
+    </div>
+
+    <app-big-button *ngIf="pageIndex == -1 && receta" [buttonText]="'Editar receta'" [color]="'blue'" [bordercolor]="'darkblue'" (clickEvent)="editarReceta()"></app-big-button>
+    <app-big-button *ngIf="receta && pageIndex>-1" [buttonText]="'Anterior'" (clickEvent)="anterior()"></app-big-button>
+    <app-big-button *ngIf="receta && receta.instructions.length-1>pageIndex" [buttonText]="'Siguiente'"
+      (clickEvent)="siguiente()"></app-big-button>
+    <app-big-button *ngIf="receta && receta.instructions.length-1==pageIndex" [buttonText] ="'Finalizar'" [color]="'green'" [bordercolor]="'darkgreen'" (clickEvent)="volver()"></app-big-button>
+  </div>
+</div>

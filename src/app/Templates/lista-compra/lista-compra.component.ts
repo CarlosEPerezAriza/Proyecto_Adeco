@@ -1,10 +1,8 @@
-import { Auth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import { ListaCompraService } from 'src/app/Servicios/lista-compra.service';
 import { ListaCompra } from './../../models/listaCompra.model';
 import { Component } from '@angular/core';
-import { compileDeclareInjectableFromMetadata } from '@angular/compiler';
 import { FirebaseAuthService } from 'src/app/Servicios/firebase-auth.service';
-import { throttleTime } from 'rxjs';
 
 @Component({
   selector: 'app-lista-compra',
@@ -15,7 +13,7 @@ export class ListaCompraComponent {
   listaCompra: ListaCompra = {id: '0', content: [], owner: ''};
   nameInput: string = ''
   imageInput:string = ''
-  constructor(private service: ListaCompraService, private auth: FirebaseAuthService) {
+  constructor(private service: ListaCompraService, private auth: FirebaseAuthService, private router:Router) {
     this.listaCompra.owner = this.auth.getUser()!.uid
     this.service
       .getLists()
@@ -43,5 +41,6 @@ export class ListaCompraComponent {
   }
   updateList(){
     this.service.updateList(this.listaCompra.id,this.listaCompra)
+    this.router.navigateByUrl('home');
   }
 }

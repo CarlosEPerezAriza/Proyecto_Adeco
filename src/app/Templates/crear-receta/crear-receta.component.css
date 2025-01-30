@@ -1,3 +1,7 @@
+:host{
+  padding: 1rem;
+}
+
 .main
 {
   background-color: var(--background-color);
@@ -12,17 +16,29 @@
   width: 5rem;
   height: 5rem;
 }
+table input[type='number']{
+width:3rem
+}
+table {
+  width: 80%;
+}
+table input {
+  max-width: 6rem;
+}
 textarea {
-  width: 100%;
+  width: 90%;
   height: 4rem;
 }
 .paso {
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  align-items: start;
+  align-items: center;
   border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 0.2rem;
   margin: 0.5rem;
+  background-color: var(--fade-color);
 }
 .paso img {
   width: 3rem;

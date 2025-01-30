@@ -5,6 +5,6 @@
   </div>
   <h3 *ngIf="error">{{error}}</h3>
   <main>
-   <app-home-cards *ngFor="let recipe of recetas" [title]="recipe.title" [imgSrc]="recipe.image" [routerLink]="['/crearreceta', recipe.id]"></app-home-cards>
+   <app-home-cards *ngFor="let recipe of recetas" [title]="recipe.title" [imgSrc]="recipe.image" [routerLink]="['/verreceta', recipe.id]"></app-home-cards>
   </main>
 </div>
